@@ -4,6 +4,7 @@ import './public/CSS/main.css';
 import { FaPlusCircle, FaRegEdit, FaRegWindowClose } from 'react-icons/fa';
 import Collapsible from 'react-collapsible';
 
+// Define a object which contains the parameters which we can manipulate
 let root = {
   id: 'root',
   value: "root",
@@ -15,6 +16,7 @@ let root = {
 const returnArray = [];
 
 class App extends Component {
+  // Call Constructor to define the states and props
   constructor(props) {
     super(props)
     this.state = {
@@ -22,6 +24,7 @@ class App extends Component {
     }
   }
 
+  // To create a new Section we have addSubfolder method
   addSubFolder = (id, value, element = this.state.root) => {
     const tempRoot = element;
     const elementKeys = Object.keys(tempRoot);
@@ -43,6 +46,8 @@ class App extends Component {
     returnArray.length = 0
   }
 
+
+  //To delete the Section we have deleteOneFolder and deleteFolder Methods
   deleteOneFolder(id, obj) {
     var clone = {};
     for (var i in obj) {
@@ -64,6 +69,8 @@ class App extends Component {
     returnArray.length = 0
   }
 
+
+  //To update the Section value we have UpdateOneFolder and updateFolder Methods
   updateOneFolder(id, updatedValue, obj) {
     var clone = {};
     for (var i in obj) {
@@ -87,6 +94,7 @@ class App extends Component {
     returnArray.length = 0
   }
 
+  /** TO DO collapse and expand the Section div */
   // toggleDiv = (id, updShow, element = this.state.root) => {
      
   //   this.setState({
@@ -95,6 +103,7 @@ class App extends Component {
   //   returnArray.length = 0
   // }
 
+  // renderScreen method to show all the Section components
   renderScreen(element) {
     const elementKeys = Object.keys(element)
     elementKeys.map(key => {

@@ -1,3 +1,6 @@
+/* Section component to show the section. It contains all the html and css properties of the Section div
+and funtion to perform onclick events*/
+
 import React, { Component } from 'react';
 import '../public/CSS/main.css';
 import { FaArrowsAlt, FaPlusCircle, FaRegEdit, FaRegWindowClose } from 'react-icons/fa';
@@ -8,11 +11,13 @@ class Section extends Component {
         this.props.addSubFolder()
     }
 
+    // addNewElement to add new child Section component
     addNewElement = () => {
         const newElement = prompt("Enter a Value to Create a New Child Section");
         this.props.addSubFolder(this.props.id, newElement)
     }
 
+    //updateElement to update Section component value
     updateElement = () => {
         const updElement = prompt("Enter a New Value for the Section");
         this.props.updateFolder(this.props.id, updElement)
